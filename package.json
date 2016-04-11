@@ -1,0 +1,20 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "A simple todo using React and Firebase",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sudheer-ranga/reactjs-todo-practice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sudheer-ranga/reactjs-todo-practice/issues"
+  },
+  "homepage": "https://github.com/sudheer-ranga/reactjs-todo-practice#readme"
+}

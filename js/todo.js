@@ -54,11 +54,16 @@ var Todo = React.createClass({
 		}
 	},
 
+	removeItem: function(key) {
+    var firebaseRef = new Firebase('https://popping-heat-9730.firebaseio.com/');
+    firebaseRef.child(key).remove();
+  },
+
 	render: function () {
 
 		return (
 			<div>
-				<TodoList list={this.state.tasks} />
+				<TodoList list={this.state.tasks} removeItem={this.removeItem} />
 
 				<form onSubmit={this.addTask}>
 					<input type="text" ref="newTask" autoFocus />
@@ -71,9 +76,10 @@ var Todo = React.createClass({
 
 var TodoList = React.createClass({
 	render: function() {
+		var _this = this;
 		var taskList = this.props.list.map(function(task, i) {
 				return (
-					<li key={i}>{task.title}</li>
+					<li key={i}>{task.title} <span onClick={_this.props.removeItem.bind(null, task['.key'])}>X</span></li>
 				);
 		});
 
